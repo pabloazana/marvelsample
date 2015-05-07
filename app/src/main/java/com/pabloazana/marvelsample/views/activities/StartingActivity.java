@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.pabloazana.marvelsample.views.fragments.FeaturedView;
 import com.pabloazana.marvelsample.views.fragments.NavigationDrawerFragment;
 import com.pabloazana.marvelsample.views.fragments.NavigationDrawerFragment.NavigationDrawerCallbacks;
 import com.pabloazana.marvelsample.R;
@@ -35,7 +36,7 @@ public class StartingActivity extends BaseActivity implements NavigationDrawerCa
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.container, PlaceholderFragment.newInstance(position + 1)).commit();
+        fragmentManager.beginTransaction().replace(R.id.container, FeaturedView.newInstance()).commit();
     }
 
     public static class PlaceholderFragment extends Fragment {
