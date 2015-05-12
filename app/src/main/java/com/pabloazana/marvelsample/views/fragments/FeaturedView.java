@@ -32,4 +32,10 @@ public class FeaturedView extends BaseFragment<FeaturedPresenter>{
     protected int getFragmentLayout() {
         return R.layout.fragment_starting;
     }
+
+    @Override
+    protected void setupToolbar() {
+        mainActivity.getToolBar().setTitle("Featured");
+        mainActivity.getToolBar().setNavigationIcon(R.drawable.ic_drawer_new);
+    }
 }
