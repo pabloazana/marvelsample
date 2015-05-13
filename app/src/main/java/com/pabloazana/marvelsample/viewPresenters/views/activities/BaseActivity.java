@@ -1,10 +1,12 @@
-package com.pabloazana.marvelsample.views.activities;
+package com.pabloazana.marvelsample.viewPresenters.views.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.pabloazana.marvelsample.R;
+import com.pabloazana.marvelsample.viewPresenters.views.fragments.NavigationDrawerFragment;
+
 
 /**
  * Created by pablo-azana on 7/05/15.
@@ -12,6 +14,7 @@ import com.pabloazana.marvelsample.R;
 
 public abstract class BaseActivity extends ActionBarActivity{
 
+    protected NavigationDrawerFragment mNavigationDrawerFragment;
     protected Toolbar toolbar;
 
     @Override
@@ -36,5 +39,7 @@ public abstract class BaseActivity extends ActionBarActivity{
     }
 
     public abstract int getContentLayout();
+
+    public abstract int getNavDrawerLayout();
 
 }

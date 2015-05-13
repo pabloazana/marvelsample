@@ -1,4 +1,4 @@
-package com.pabloazana.marvelsample.views.presenters;
+package com.pabloazana.marvelsample.viewPresenters.presenters;
 
 /**
  * Created by pablo-azana on 8/05/15.

@@ -12,6 +12,6 @@
 
     <string name="action_settings">Settings</string>
 
-
     <string name="searchTitle">Search for characters, comics, creators and events.</string>
+    <string name="navdrawer_user_icon_description">User image</string>
 </resources>

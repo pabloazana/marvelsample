@@ -23,4 +23,9 @@
         <item name="android:textColorHint">@color/white_50</item>
     </style>
 
+    <style name="Medium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
 </resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--TOOLBAR-->
-    <color name="primary_color">#e84916</color>
+    <color name="primary_color">#8f2a22</color>
     <color name="tintColor">#691A99</color>
     <color name="tintColor_30">#4D00BCD4</color>
     <color name="tintColor_dark">#00A3BB</color>
@@ -13,4 +13,5 @@
     <color name="white">#FFFFFF</color>
     <color name="white_30">#4DFFFFFF</color>
     <color name="white_50">#80FFFFFF</color>
+    <color name="navdrawer_text_user_color">#deffffff</color>
 </resources>

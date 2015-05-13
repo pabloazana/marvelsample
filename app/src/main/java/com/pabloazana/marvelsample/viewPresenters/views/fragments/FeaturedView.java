@@ -1,9 +1,10 @@
-package com.pabloazana.marvelsample.views.fragments;
+package com.pabloazana.marvelsample.viewPresenters.views.fragments;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import com.pabloazana.marvelsample.R;
-import com.pabloazana.marvelsample.views.presenters.FeaturedPresenter;
+import com.pabloazana.marvelsample.viewPresenters.presenters.FeaturedPresenter;
 
 /**
  * Created by pablo-azana on 8/05/15.

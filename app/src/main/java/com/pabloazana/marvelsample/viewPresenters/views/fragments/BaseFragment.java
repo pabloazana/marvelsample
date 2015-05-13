@@ -1,4 +1,4 @@
-package com.pabloazana.marvelsample.views.fragments;
+package com.pabloazana.marvelsample.viewPresenters.views.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,8 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.pabloazana.marvelsample.views.activities.StartingActivity;
-import com.pabloazana.marvelsample.views.presenters.BasePresenter;
+import com.pabloazana.marvelsample.viewPresenters.views.activities.StartingActivity;
+import com.pabloazana.marvelsample.viewPresenters.presenters.BasePresenter;
 
 /**
  * Created by pablo-azana on 8/05/15.
