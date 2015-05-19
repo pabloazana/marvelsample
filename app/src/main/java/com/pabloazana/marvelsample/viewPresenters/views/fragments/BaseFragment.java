@@ -23,8 +23,8 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        presenter = getPresenter();
         mainActivity = (StartingActivity)getActivity();
+        presenter = getPresenter();
     }
 
     @Nullable

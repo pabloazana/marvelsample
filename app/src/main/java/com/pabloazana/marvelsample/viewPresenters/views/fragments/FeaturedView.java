@@ -1,8 +1,6 @@
 package com.pabloazana.marvelsample.viewPresenters.views.fragments;
 
 import android.os.Bundle;
-import android.util.Log;
-
 import com.pabloazana.marvelsample.R;
 import com.pabloazana.marvelsample.viewPresenters.presenters.FeaturedPresenter;
 
