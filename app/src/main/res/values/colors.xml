@@ -10,6 +10,7 @@
     <color name="grayE">#eeeeee</color>
     <color name="gray7">#777777</color>
     <color name="black">#000000</color>
+    <color name="black_50">#7F000000</color>
     <color name="white">#FFFFFF</color>
     <color name="white_30">#4DFFFFFF</color>
     <color name="white_50">#80FFFFFF</color>
@@ -20,5 +21,6 @@
     <color name="navdrawer_text_color_selected">@color/primary_color</color>
     <color name="navdrawer_icon_tint">#777777</color>
     <color name="navdrawer_icon_tint_selected">@color/primary_color</color>
+    <color name="transparent">#00000000</color>
 
 </resources>

@@ -15,7 +15,7 @@
     <string name="searchTitle">Search for characters, comics, creators and events.</string>
     <string name="navdrawer_user_icon_description">User image</string>
 
-    <string name="navdrawer_item_my_music">My music</string>
+    <string name="navdrawer_item_my_library">My library</string>
     <string name="navdrawer_item_featured">Featured</string>
     <string name="navdrawer_item_settings">Settings</string>
 </resources>
