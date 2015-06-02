@@ -1,6 +1,5 @@
 package com.pabloazana.marvelsample.viewPresenters.featuredView.viewHolders;
 
-import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -11,7 +10,7 @@ import com.pabloazana.marvelsample.R;
  * Created by pablo-azana on 20/05/15.
  */
 
-public class FeaturedItemViewHolder extends ViewHolder {
+public class FeaturedItemViewHolder extends HeaderAndItemViewHolder {
 
     public TextView featured_name;
     public TextView featured_description;
@@ -23,4 +22,6 @@ public class FeaturedItemViewHolder extends ViewHolder {
         featured_image = (ImageView) itemView.findViewById(R.id.comic_image);
         featured_description = (TextView) itemView.findViewById(R.id.comic_description);
     }
+
+
 }

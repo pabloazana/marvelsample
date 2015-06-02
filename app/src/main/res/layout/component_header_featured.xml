@@ -9,6 +9,8 @@
         android:id="@+id/featured_tittle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Titulo"/>
+        android:text="Titulo"
+        android:textSize="16dp"
+        android:textColor="@color/primary_color"/>
 
 </LinearLayout>

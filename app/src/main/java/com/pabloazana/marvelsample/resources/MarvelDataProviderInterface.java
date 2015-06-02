@@ -14,4 +14,8 @@ public interface MarvelDataProviderInterface {
 
     void getFeaturedComics(ResourcesCallBack<ArrayList<BaseModel>> responseCallBack) throws NoSuchAlgorithmException;
 
+    void getFeaturedCharacters(ResourcesCallBack<ArrayList<BaseModel>> responseCallBack) throws NoSuchAlgorithmException;
+
+    void getFeaturedEvents(ResourcesCallBack<ArrayList<BaseModel>> responseCallBack) throws NoSuchAlgorithmException;
+
 }

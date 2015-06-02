@@ -4,18 +4,14 @@ import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 
 import com.pabloazana.marvelsample.R;
-import com.pabloazana.marvelsample.model.BaseModel;
-import com.pabloazana.marvelsample.model.Comic;
 import com.pabloazana.marvelsample.viewPresenters.featuredView.adapters.FeaturedItemsAdapter;
 import com.pabloazana.marvelsample.viewPresenters.featuredView.presenters.FeaturedPresenter;
 import com.pabloazana.marvelsample.viewPresenters.baseView.views.BaseFragment;
+import com.pabloazana.marvelsample.viewPresenters.featuredView.utils.FeaturedDataProvider;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 
 /**
  * Created by pablo-azana on 8/05/15.
@@ -25,7 +21,7 @@ public class FeaturedView extends BaseFragment<FeaturedPresenter> {
 
     public static final String SCREEN_TAG = "Featured_View";
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
+    private FeaturedItemsAdapter mAdapter;
     private GridLayoutManager mLayoutManager;
 
     public static FeaturedView newInstance() {
@@ -47,8 +43,15 @@ public class FeaturedView extends BaseFragment<FeaturedPresenter> {
         mRecyclerView.setLayoutManager(mLayoutManager);
     }
 
-    public void paintComic(ArrayList<BaseModel> comicsToPaint) {
-        mAdapter = new FeaturedItemsAdapter(comicsToPaint, getActivity(), null);
+    public void paintComic(FeaturedDataProvider featuredDataProvider) {
+        mAdapter = new FeaturedItemsAdapter(featuredDataProvider, getActivity());
+        mLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+                return mAdapter.getSpanSize(position);
+            }
+        });
+
         mRecyclerView.setAdapter(mAdapter);
         mAdapter.notifyDataSetChanged();
     }
@@ -57,10 +60,18 @@ public class FeaturedView extends BaseFragment<FeaturedPresenter> {
         @Override
         public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
             int position = parent.getChildPosition(view);
-            outRect.left = (position % 2 == 0 ? 16 : 8);
-            outRect.right = (position % 2 == 0 ? 8 : 16);
-            outRect.bottom = 8;
-            outRect.top = (position == 0 || position== 1) ? 16 : 8;
+            if(mAdapter.isHeaderSection(position)){
+                outRect.left = 16;
+                outRect.right = 16;
+                outRect.bottom = 8;
+                outRect.top = 16;
+            }
+            else {
+                outRect.left = (mAdapter.getRelativePosition(position) % 2 == 0 ? 16 : 8);
+                outRect.right = (mAdapter.getRelativePosition(position) % 2 == 0 ? 8 : 16);
+                outRect.bottom = 8;
+                outRect.top = mAdapter.getRelativePosition(position) == 0 || mAdapter.getRelativePosition(position) == 1 ? 16 : 8;
+            }
         }
     }
 

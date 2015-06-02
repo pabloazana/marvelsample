@@ -9,11 +9,14 @@ public class NavigationdrawerPresenter{
 
     public NavigationdrawerPresenter(NavigationDrawerCallbacks startingActivity){
         navigationDrawerCallbacks = startingActivity;
+        currentPosition = -1;
     }
 
     public void selectNavigationDrawerPosition(int position){
-        currentPosition = position;
-        navigationDrawerCallbacks.onNavigationDrawerItemSelected(currentPosition);
+        if(currentPosition != position) {
+            currentPosition = position;
+            navigationDrawerCallbacks.onNavigationDrawerItemSelected(currentPosition);
+        }
     }
 
     public int getCurrentPosition(){

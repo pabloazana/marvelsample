@@ -9,7 +9,7 @@ public class BaseModel {
     public enum modelType{
         TYPE_CHARACTER,
         TYPE_COMIC,
-        TYPE_CREATOR
+        TYPE_EVENT
     }
 
     private modelType type;

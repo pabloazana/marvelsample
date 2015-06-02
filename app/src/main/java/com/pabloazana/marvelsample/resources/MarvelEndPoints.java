@@ -1,6 +1,5 @@
 package com.pabloazana.marvelsample.resources;
 
-
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -20,6 +19,8 @@ public class MarvelEndPoints {
     private static String TS = "ts=";
     private static String HASH = "hash=";
     private static String COMICS_TYPE = "comics?";
+    private static String CHARACTERS_TYPE = "characters?";
+    private static String EVENTS_TYPE = "events?";
     private static String API_KEY = "55cd4d518dbc152ccffdb394c1e92744";
 
     /* NEVER DO IT AT HOME!!!!! */
@@ -28,10 +29,22 @@ public class MarvelEndPoints {
 
     public static String constructComicFeaturedURI() throws NoSuchAlgorithmException {
         long currentTime = System.currentTimeMillis();
-        return BASE_URL + COMICS_TYPE + FORMAT_TYPE + "comic&" + DATE_DESCRIPTOR + "lastWeek&" + ORDER_BY + "-onsaleDate&" + LIMIT + "20&" + OFFSET + "0&" +
+        return BASE_URL + COMICS_TYPE + FORMAT_TYPE + "comic&" + DATE_DESCRIPTOR + "lastWeek&" + ORDER_BY + "-onsaleDate&" + LIMIT + "4&" + OFFSET + "0&" +
                 API_KEY_STRING + API_KEY + "&" + TS + currentTime + "&" + HASH + getHash(currentTime + "");
     }
 
+
+    public static String constructCharactersFeaturedURI() throws NoSuchAlgorithmException {
+        long currentTime = System.currentTimeMillis();
+        return BASE_URL + CHARACTERS_TYPE + ORDER_BY + "modified&" + LIMIT + "10&" + OFFSET + "0&" + API_KEY_STRING + API_KEY + "&" + TS + currentTime +
+                "&" + HASH + getHash(currentTime + "");
+    }
+
+    public static String constructEventsFeaturedURI() throws NoSuchAlgorithmException {
+        long currentTime = System.currentTimeMillis();
+        return BASE_URL + EVENTS_TYPE + ORDER_BY + "modified&" + LIMIT + "4&" + OFFSET + "0&" + API_KEY_STRING + API_KEY + "&" + TS + currentTime +
+                "&" + HASH + getHash(currentTime + "");
+    }
 
     public static String getHash(String currentTime) throws NoSuchAlgorithmException {
         MessageDigest m = MessageDigest.getInstance("MD5");

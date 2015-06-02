@@ -73,7 +73,7 @@ public class NavigationDrawerFragment extends Fragment{
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
         mUserLearnedDrawer = sp.getBoolean(PREF_USER_LEARNED_DRAWER, false);
         if (savedInstanceState != null) mFromSavedInstanceState = true;
-        selectItem(savedInstanceState != null ? savedInstanceState.getInt(STATE_SELECTED_POSITION) : 0);
+
     }
 
     @Override
@@ -92,6 +92,7 @@ public class NavigationDrawerFragment extends Fragment{
             navDrawerItemViews[i] = makeNavDrawerItem(NAVDRAWER_ITEM_ID[i], navDrawerItemsListContainer, inflater);
             navDrawerItemsListContainer.addView(navDrawerItemViews[i]);
         }
+        selectItem(savedInstanceState != null ? savedInstanceState.getInt(STATE_SELECTED_POSITION) : 0);
         return linearLayoutDrawer;
     }
 
