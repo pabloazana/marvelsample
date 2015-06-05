@@ -2,12 +2,14 @@ package com.pabloazana.marvelsample.viewPresenters.featuredView.presenters;
 
 
 import com.pabloazana.marvelsample.R;
-import com.pabloazana.marvelsample.model.BaseModel;
+import com.pabloazana.marvelsample.model.*;
+import com.pabloazana.marvelsample.model.Character;
 import com.pabloazana.marvelsample.resources.MarvelDataProvider;
 import com.pabloazana.marvelsample.net.ResourcesCallBacks.ResourcesCallBack;
 import com.pabloazana.marvelsample.viewPresenters.baseView.presenters.BasePresenter;
-import com.pabloazana.marvelsample.viewPresenters.featuredView.utils.FeaturedDataProvider;
 import com.pabloazana.marvelsample.viewPresenters.featuredView.views.FeaturedView;
+import com.pabloazana.multipleheaderrecyclerview.model.RecycleBaseModel;
+import com.pabloazana.multipleheaderrecyclerview.model.RecycleDataProvider;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -20,15 +22,22 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class FeaturedPresenter extends BasePresenter<FeaturedView> {
 
+    public static final int TOTAL_ITEMS = 3;
+
     private MarvelDataProvider marvelDataProvider;
-    private FeaturedDataProvider featuredDataProvider;
+    private RecycleDataProvider recyleDataProvider;
     private AtomicInteger itemsCount;
+    private ArrayList<Integer> types;
 
     public FeaturedPresenter(FeaturedView view) {
         super(view);
         marvelDataProvider = new MarvelDataProvider(view.getActivity());
-        featuredDataProvider = new FeaturedDataProvider();
+        recyleDataProvider = new RecycleDataProvider(TOTAL_ITEMS);
         itemsCount = new AtomicInteger(3);
+        types = new ArrayList<>();
+        types.add(Comic.COMIC_TYPE);
+        types.add(Character.CHARACTER_TYPE);
+        types.add(Event.EVENT_TYPE);
     }
 
     @Override
@@ -40,10 +49,10 @@ public class FeaturedPresenter extends BasePresenter<FeaturedView> {
 
     private void getFeaturedComics(){
         try {
-            marvelDataProvider.getFeaturedComics(new ResourcesCallBack<ArrayList<BaseModel>>() {
+            marvelDataProvider.getFeaturedComics(new ResourcesCallBack<ArrayList<RecycleBaseModel>>() {
                 @Override
-                public void onResponse(ArrayList<BaseModel> comicArrayList) {
-                    featuredDataProvider.addFeaturedData(view.getResources().getString(R.string.comic_sectionTitle), comicArrayList);
+                public void onResponse(ArrayList<RecycleBaseModel> comicArrayList) {
+                    recyleDataProvider.addFeaturedData(view.getResources().getString(R.string.comic_sectionTitle), comicArrayList, Comic.COMIC_TYPE);
                     paintContent();
                 }
             });
@@ -54,10 +63,10 @@ public class FeaturedPresenter extends BasePresenter<FeaturedView> {
 
     private void getFeaturedCharacters(){
         try {
-            marvelDataProvider.getFeaturedCharacters(new ResourcesCallBack<ArrayList<BaseModel>>() {
+            marvelDataProvider.getFeaturedCharacters(new ResourcesCallBack<ArrayList<RecycleBaseModel>>() {
                 @Override
-                public void onResponse(ArrayList<BaseModel> characterArrayList) {
-                    featuredDataProvider.addFeaturedData(view.getResources().getString(R.string.character_sectionTitle), characterArrayList);
+                public void onResponse(ArrayList<RecycleBaseModel> characterArrayList) {
+                    recyleDataProvider.addFeaturedData(view.getResources().getString(R.string.character_sectionTitle), characterArrayList, Character.CHARACTER_TYPE);
                     paintContent();
                 }
             });
@@ -66,10 +75,10 @@ public class FeaturedPresenter extends BasePresenter<FeaturedView> {
 
     private void getFeaturedEvents(){
         try {
-            marvelDataProvider.getFeaturedEvents(new ResourcesCallBack<ArrayList<BaseModel>>() {
+            marvelDataProvider.getFeaturedEvents(new ResourcesCallBack<ArrayList<RecycleBaseModel>>() {
                 @Override
-                public void onResponse(ArrayList<BaseModel> eventArrayList) {
-                    featuredDataProvider.addFeaturedData(view.getResources().getString(R.string.event_sectionTitle), eventArrayList);
+                public void onResponse(ArrayList<RecycleBaseModel> eventArrayList) {
+                    recyleDataProvider.addFeaturedData(view.getResources().getString(R.string.event_sectionTitle), eventArrayList, Event.EVENT_TYPE);
                     paintContent();
                 }
             });
@@ -79,7 +88,10 @@ public class FeaturedPresenter extends BasePresenter<FeaturedView> {
 
     private void paintContent(){
         if(itemsCount.decrementAndGet() == 0)
-            view.paintComic(featuredDataProvider);
+            view.paintComic(recyleDataProvider);
     }
 
+    public ArrayList<Integer> getTypes() {
+        return types;
+    }
 }

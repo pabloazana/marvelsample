@@ -5,6 +5,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.pabloazana.marvelsample.R;
+import com.pabloazana.multipleheaderrecyclerview.views.viewholder.HeaderAndItemViewHolder;
 
 /**
  * Created by pablo-azana on 20/05/15.

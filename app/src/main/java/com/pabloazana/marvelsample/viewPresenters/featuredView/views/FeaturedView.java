@@ -10,7 +10,7 @@ import com.pabloazana.marvelsample.R;
 import com.pabloazana.marvelsample.viewPresenters.featuredView.adapters.FeaturedItemsAdapter;
 import com.pabloazana.marvelsample.viewPresenters.featuredView.presenters.FeaturedPresenter;
 import com.pabloazana.marvelsample.viewPresenters.baseView.views.BaseFragment;
-import com.pabloazana.marvelsample.viewPresenters.featuredView.utils.FeaturedDataProvider;
+import com.pabloazana.multipleheaderrecyclerview.model.RecycleDataProvider;
 
 
 /**
@@ -43,8 +43,8 @@ public class FeaturedView extends BaseFragment<FeaturedPresenter> {
         mRecyclerView.setLayoutManager(mLayoutManager);
     }
 
-    public void paintComic(FeaturedDataProvider featuredDataProvider) {
-        mAdapter = new FeaturedItemsAdapter(featuredDataProvider, getActivity());
+    public void paintComic(RecycleDataProvider recycleDataProvider) {
+        mAdapter = new FeaturedItemsAdapter(getActivity(), recycleDataProvider, presenter.getTypes());
         mLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
             public int getSpanSize(int position) {

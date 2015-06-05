@@ -1,7 +1,9 @@
 package com.pabloazana.marvelsample.resources;
 
-import com.pabloazana.marvelsample.model.BaseModel;
+import com.pabloazana.marvelsample.model.*;
+import com.pabloazana.marvelsample.model.Character;
 import com.pabloazana.marvelsample.net.ResourcesCallBacks.ResourcesCallBack;
+import com.pabloazana.multipleheaderrecyclerview.model.RecycleBaseModel;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -12,10 +14,10 @@ import java.util.ArrayList;
 
 public interface MarvelDataProviderInterface {
 
-    void getFeaturedComics(ResourcesCallBack<ArrayList<BaseModel>> responseCallBack) throws NoSuchAlgorithmException;
+    void getFeaturedComics(ResourcesCallBack<ArrayList<RecycleBaseModel>> responseCallBack) throws NoSuchAlgorithmException;
 
-    void getFeaturedCharacters(ResourcesCallBack<ArrayList<BaseModel>> responseCallBack) throws NoSuchAlgorithmException;
+    void getFeaturedCharacters(ResourcesCallBack<ArrayList<RecycleBaseModel>> responseCallBack) throws NoSuchAlgorithmException;
 
-    void getFeaturedEvents(ResourcesCallBack<ArrayList<BaseModel>> responseCallBack) throws NoSuchAlgorithmException;
+    void getFeaturedEvents(ResourcesCallBack<ArrayList<RecycleBaseModel>> responseCallBack) throws NoSuchAlgorithmException;
 
 }

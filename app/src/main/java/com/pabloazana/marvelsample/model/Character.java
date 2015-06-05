@@ -1,16 +1,22 @@
 package com.pabloazana.marvelsample.model;
 
+import com.pabloazana.multipleheaderrecyclerview.model.RecycleBaseModel;
+
 /**
  * Created by pablo-azana on 28/05/15.
  */
-public class Character extends BaseModel{
 
+public class Character extends RecycleBaseModel{
 
+    public static final int CHARACTER_TYPE = 0;
+
+    private String name;
     private String description;
     private String thumbnailURI;
 
-    public Character(modelType type, String name, String id) {
-        super(type, name, id);
+
+    public Character(String id) {
+        super(CHARACTER_TYPE, id);
     }
 
     public void setDescription(String description) {
@@ -23,11 +29,19 @@ public class Character extends BaseModel{
         this.thumbnailURI = thumbnailURI;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getDescription() {
         return description;
     }
 
     public String getThumbnailURI() {
         return thumbnailURI;
+    }
+
+    public String getName() {
+        return name;
     }
 }
