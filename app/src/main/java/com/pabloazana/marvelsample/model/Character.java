@@ -8,7 +8,7 @@ import com.pabloazana.multipleheaderrecyclerview.model.RecycleBaseModel;
 
 public class Character extends RecycleBaseModel{
 
-    public static final int CHARACTER_TYPE = 0;
+    public static final int CHARACTER_TYPE = 2;
 
     private String name;
     private String description;

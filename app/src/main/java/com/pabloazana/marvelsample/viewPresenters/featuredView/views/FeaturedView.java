@@ -7,10 +7,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.pabloazana.marvelsample.R;
+import com.pabloazana.marvelsample.model.Event;
 import com.pabloazana.marvelsample.viewPresenters.featuredView.adapters.FeaturedItemsAdapter;
 import com.pabloazana.marvelsample.viewPresenters.featuredView.presenters.FeaturedPresenter;
 import com.pabloazana.marvelsample.viewPresenters.baseView.views.BaseFragment;
 import com.pabloazana.multipleheaderrecyclerview.model.RecycleDataProvider;
+
+import static com.pabloazana.marvelsample.model.Event.EVENT_TYPE;
+import static com.pabloazana.multipleheaderrecyclerview.views.adapter.RecycleBaseAdapter.TYPE_HEADER;
 
 
 /**
@@ -44,7 +48,7 @@ public class FeaturedView extends BaseFragment<FeaturedPresenter> {
     }
 
     public void paintComic(RecycleDataProvider recycleDataProvider) {
-        mAdapter = new FeaturedItemsAdapter(getActivity(), recycleDataProvider, presenter.getTypes());
+        mAdapter = new FeaturedItemsAdapter(getActivity(), recycleDataProvider);
         mLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
             public int getSpanSize(int position) {
@@ -60,17 +64,23 @@ public class FeaturedView extends BaseFragment<FeaturedPresenter> {
         @Override
         public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
             int position = parent.getChildPosition(view);
-            if(mAdapter.isHeaderSection(position)){
+            if(mAdapter.getItemViewType(position) == TYPE_HEADER){
                 outRect.left = 16;
                 outRect.right = 16;
                 outRect.bottom = 8;
                 outRect.top = 16;
             }
-            else {
-                outRect.left = (mAdapter.getRelativePosition(position) % 2 == 0 ? 16 : 8);
-                outRect.right = (mAdapter.getRelativePosition(position) % 2 == 0 ? 8 : 16);
+            else if(mAdapter.getItemViewType(position) == EVENT_TYPE){
+                outRect.left = 16;
+                outRect.right = 16;
                 outRect.bottom = 8;
-                outRect.top = mAdapter.getRelativePosition(position) == 0 || mAdapter.getRelativePosition(position) == 1 ? 16 : 8;
+                outRect.top = 8;
+            }
+            else {
+                outRect.left = (mAdapter.getRealPosition(position) % 2 == 0 ? 16 : 8);
+                outRect.right = (mAdapter.getRealPosition(position) % 2 == 0 ? 8 : 16);
+                outRect.bottom = 8;
+                outRect.top = mAdapter.getRealPosition(position) == 0 || mAdapter.getRealPosition(position) == 1 ? 16 : 8;
             }
         }
     }

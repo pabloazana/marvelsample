@@ -27,17 +27,12 @@ public class FeaturedPresenter extends BasePresenter<FeaturedView> {
     private MarvelDataProvider marvelDataProvider;
     private RecycleDataProvider recyleDataProvider;
     private AtomicInteger itemsCount;
-    private ArrayList<Integer> types;
 
     public FeaturedPresenter(FeaturedView view) {
         super(view);
         marvelDataProvider = new MarvelDataProvider(view.getActivity());
         recyleDataProvider = new RecycleDataProvider(TOTAL_ITEMS);
         itemsCount = new AtomicInteger(3);
-        types = new ArrayList<>();
-        types.add(Comic.COMIC_TYPE);
-        types.add(Character.CHARACTER_TYPE);
-        types.add(Event.EVENT_TYPE);
     }
 
     @Override
@@ -91,7 +86,4 @@ public class FeaturedPresenter extends BasePresenter<FeaturedView> {
             view.paintComic(recyleDataProvider);
     }
 
-    public ArrayList<Integer> getTypes() {
-        return types;
-    }
 }

@@ -12,7 +12,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="240dp"
+        android:layout_height="280dp"
         android:orientation="vertical"
         android:background="@color/white">
 
@@ -23,7 +23,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="120dp"
             android:layout_alignParentBottom="true"
             android:background="@color/white"
             android:orientation="vertical"
@@ -53,6 +53,32 @@
                 android:text="This is the description of the component. Let's see what happend"
                 android:layout_gravity="top"
                 android:layout_marginTop="8dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="left">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_action_action_add_shopping_cart"
+                    android:layout_gravity="center"
+                    android:tint="@color/primary_color"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Buy it!"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:textSize="18dp"
+                    android:textColor="@color/primary_color"/>
+
+            </LinearLayout>
         </LinearLayout>
 
     </RelativeLayout>

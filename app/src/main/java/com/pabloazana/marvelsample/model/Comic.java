@@ -8,7 +8,7 @@ import com.pabloazana.multipleheaderrecyclerview.model.RecycleBaseModel;
 
 public class Comic extends RecycleBaseModel{
 
-    public static final int COMIC_TYPE = 2;
+    public static final int COMIC_TYPE = 1;
 
     private String name;
     private String description;

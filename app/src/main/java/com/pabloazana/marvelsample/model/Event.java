@@ -8,7 +8,7 @@ import com.pabloazana.multipleheaderrecyclerview.model.RecycleBaseModel;
 
 public class Event extends RecycleBaseModel {
 
-    public static final int EVENT_TYPE = 1;
+    public static final int EVENT_TYPE = 0;
 
     private String name;
     private String description;

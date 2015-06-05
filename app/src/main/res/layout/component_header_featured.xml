@@ -2,15 +2,33 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/component_header_featured"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="48dp"
+    android:orientation="horizontal"
+    android:paddingEnd="8dp"
+    android:paddingStart="16dp">
 
     <TextView
         android:id="@+id/featured_tittle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Titulo"
-        android:textSize="16dp"
-        android:textColor="@color/primary_color"/>
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:textColor="@color/primary_color"
+        android:textSize="18dp"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <ImageView
+        android:id="@+id/sectionSeeMore"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_vertical"
+        android:padding="4dp"
+        android:src="@drawable/ic_action_more"
+        android:tint="@color/primary_color"
+        android:visibility="visible" />
 
 </LinearLayout>
