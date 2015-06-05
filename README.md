@@ -1,5 +1,5 @@
 MarvelSample
--------------
+============
 
 This example is used for showing some of the concepts explained at http://www.agiledeveloper.ninja. Please, feel free to contribute!!
 
