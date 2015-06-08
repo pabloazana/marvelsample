@@ -9,7 +9,7 @@ This example is used for showing some of the concepts explained at http://www.ag
 Index
 --------
 
-* __MultipleHeaderRecycleView__: a library for insert multiple sections with differents ViewHolders inside the same RecyclerView.
+* [__MultipleHeaderRecycleView__](multipleheaderrecyclerview)__MultipleHeaderRecycleView__: a library for insert multiple sections with differents ViewHolders inside the same RecyclerView.
 
 
 License
