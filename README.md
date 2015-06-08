@@ -1,9 +1,9 @@
 MarvelSample
--------------
+============
 
 This example is used for showing some of the concepts explained at http://www.agiledeveloper.ninja. Please, feel free to contribute!!
 
-![alt text](http://vignette1.wikia.nocookie.net/deathbattle/images/4/4b/Spiderman_png_by_captainjackharkness-d5cbru1.png/revision/latest?cb=20141120012050 "Autobus logo")
+![alt text](http://vignette1.wikia.nocookie.net/deathbattle/images/4/4b/Spiderman_png_by_captainjackharkness-d5cbru1.png/revision/latest?cb=20141120012050 "MarvelSample logo")
 
 
 Index
