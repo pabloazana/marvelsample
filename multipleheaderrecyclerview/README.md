@@ -1,6 +1,6 @@
 MultipleHeaderRecyclerView
 ==============================
-Just a way to manage multiple sections with different heads and different ViewHolder inside the same RecyclerView
+Just a way to manage multiple sections with different heads and different ViewHolder inside the same RecyclerView, Thanks to [Dario Martín] (https://twitter.com/darymlo), a crack in Android UI and fanatic of Material Design.
 
 What is it?
 -------------
