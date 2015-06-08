@@ -11,6 +11,7 @@ __MultiheaderSectionRecyclerView__ is a library for allowing you to create a Rec
 
 Why?
 ------
+Because I would like to provide an easy way to create one of this elements __without need to override__ the same methods again. I've created this __generic module__ which we could use in differents projects.
 
 How?
 ------
