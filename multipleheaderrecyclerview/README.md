@@ -23,7 +23,7 @@ For using MultipleHeaderRecyclerView you should follow the next steps:
 * Create your __adapter__ extending from __RecycleBaseAdapter__ and override its methods.
 * Create as much __ViewHolders__ as you need extending from __HeaderAndItemViewHolder__
 
-In the example code you can see how I've used the module. In this post of my blog, you can find more details about.
+In the example code you can see how I've used the module. In this [post] (http://www.agiledeveloper.ninja/2015/06/recyclerviews-with-multiple-sections.html) of my blog, you can find more details about.
 
 Contribute, carajo!
 -------------------
